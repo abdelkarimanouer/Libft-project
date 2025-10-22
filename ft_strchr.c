@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 10:12:50 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/19 10:05:05 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/22 15:37:08 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strchr(const char *s, int c)
 	int		i;
 	char	tmpc;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	tmpc = (char) c;
 	while (s[i])

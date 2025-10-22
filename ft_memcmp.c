@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 15:39:17 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/15 15:46:16 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/22 15:03:52 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*ps1;
 	unsigned char	*ps2;
 
+	if (!s1 && !s2)
+		return (0);
 	if (n == 0)
 		return (0);
 	i = 0;

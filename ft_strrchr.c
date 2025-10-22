@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 10:32:33 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/19 10:07:50 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/22 15:56:05 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strrchr(const char *s, int c)
 	int		index;
 	char	tmpc;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	index = -1;
 	tmpc = (char) c;

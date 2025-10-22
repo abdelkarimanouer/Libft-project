@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:32:23 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/15 16:44:14 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/22 15:38:10 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(const char *s)
 	char	*copy;
 	size_t	len;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	len = ft_strlen(s);
 	copy = malloc(len + 1);
