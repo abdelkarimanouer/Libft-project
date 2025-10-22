@@ -14,7 +14,7 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-%.o : %.c
+%.o : %.c libft.h
 	$(CC) $(CFLAGS) -I . -c $< -o $@
 
 clean :

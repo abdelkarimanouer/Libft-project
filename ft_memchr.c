@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:59:20 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/18 15:18:52 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/22 14:56:21 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*ps;
 	unsigned char	pc;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	ps = (unsigned char *) s;
 	pc = (unsigned char) c;
