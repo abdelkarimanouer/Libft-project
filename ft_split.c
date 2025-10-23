@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 12:10:27 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/23 11:59:30 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/23 13:50:23 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ static size_t	skip(size_t i, char c, char const *s)
 		i++;
 	return (i);
 }
+
 static void	free_arr(char **arr)
 {
 	size_t	index;
