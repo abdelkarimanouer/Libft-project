@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 18:46:06 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/22 12:10:16 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/23 12:02:58 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*pdest;
 	unsigned char	*psrc;
 
-<<<<<<< HEAD
-	if (!dest && !src)
-=======
 	if (!dest || !src)
->>>>>>> 712ab71bca53a2891677d28d253a822c3fb144c5
 		return (NULL);
 	if (dest == src)
 		return (dest);
