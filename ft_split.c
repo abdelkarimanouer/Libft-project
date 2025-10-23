@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 12:10:27 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/23 11:33:28 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/23 11:59:30 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,32 +39,58 @@ static size_t	skip(size_t i, char c, char const *s)
 		i++;
 	return (i);
 }
+static void	free_arr(char **arr)
+{
+	size_t	index;
 
-char	**ft_split(char const *s, char c)
+	index = 0;
+	while (arr[index])
+	{
+		free(arr[index]);
+		arr[index] = NULL;
+		index++;
+	}
+	free(arr);
+	arr = NULL;
+}
+
+static void	fill_arr(char **arr, char const *s, char c)
 {
 	size_t	i;
 	int		index;
 	size_t	start;
-	char	**arr;
 
-	if (!s)
-		return (NULL);
 	i = 0;
 	index = 0;
-	arr = malloc(sizeof(char *) * (getsize(s, c) + 1));
-	if (!arr)
-		return (NULL);
 	while (s[i])
 	{
 		if (c != s[i])
 		{
 			start = i;
 			i = skip(i, c, s);
-			arr[index++] = ft_substr(s, start, i - start);
+			arr[index] = ft_substr(s, start, i - start);
+			if (!arr[index])
+			{
+				free_arr(arr);
+				return ;
+			}
+			index++;
 		}
 		else
 			i++;
 	}
 	arr[index] = NULL;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**arr;
+
+	if (!s)
+		return (NULL);
+	arr = malloc(sizeof(char *) * (getsize(s, c) + 1));
+	fill_arr(arr, s, c);
+	if (!arr)
+		return (NULL);
 	return (arr);
 }
