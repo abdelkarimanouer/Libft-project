@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 12:10:27 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/23 13:50:23 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/23 14:30:35 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static void	free_arr(char **arr)
 	arr = NULL;
 }
 
-static void	fill_arr(char **arr, char const *s, char c)
+static int	fill_arr(char **arr, char const *s, char c)
 {
 	size_t	i;
 	int		index;
@@ -73,7 +73,7 @@ static void	fill_arr(char **arr, char const *s, char c)
 			if (!arr[index])
 			{
 				free_arr(arr);
-				return ;
+				return (0);
 			}
 			index++;
 		}
@@ -81,6 +81,7 @@ static void	fill_arr(char **arr, char const *s, char c)
 			i++;
 	}
 	arr[index] = NULL;
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -90,8 +91,10 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	arr = malloc(sizeof(char *) * (getsize(s, c) + 1));
-	fill_arr(arr, s, c);
 	if (!arr)
 		return (NULL);
-	return (arr);
+	if (fill_arr(arr, s, c))
+		return (arr);
+	else
+		return (NULL);
 }
