@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 15:49:11 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/22 15:55:31 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/23 19:42:14 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	ifind;
 
-	if (!big && !little)
+	if (!big || !little)
 		return (NULL);
 	if (little[0] == '\0')
 		return ((char *)big);

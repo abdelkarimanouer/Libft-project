@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 09:02:11 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/22 15:53:53 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/23 19:40:59 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 
-	if (!dest && !src)
+	if (!dest || !src)
 		return (0);
 	i = 0;
 	if (size > 0)
