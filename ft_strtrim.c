@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 09:58:15 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/16 12:31:16 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/24 14:17:57 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
+	if (s1[0] == '\0')
+		return (ft_strdup(""));
+	if (set[0] == '\0')
+		return (ft_strdup(s1));
 	start = get_start(s1, set);
 	end = get_end(s1, set, start);
 	return (ft_substr(s1, start, end));
