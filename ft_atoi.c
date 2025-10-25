@@ -6,23 +6,22 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:14:45 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/25 22:48:55 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/25 23:00:18 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_null_or_empty(const char *str)
+static int	is_null_or_empty(const char *str)
 {
 	if (str == NULL)
 		return (1);
-	else if (str[0] == '\0')
+	if (str[0] == '\0')
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 
-int	skipp_ws_sign(const char *str, int *sign)
+static int	skipp_ws_sign(const char *str, int *sign)
 {
 	int	i;
 
