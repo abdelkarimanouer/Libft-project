@@ -28,4 +28,4 @@ re : fclean all
 bonus : $(NAME) $(OBJBONUS)
 	ar rcs $(NAME) $(OBJBONUS)
 
-.PHONY : clean fclean re all bonus
+.PHONY : clean
