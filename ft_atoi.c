@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:14:45 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/22 14:37:18 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/25 22:48:55 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	ft_atoi(const char *str)
 {
 	int			i;
 	long		rs;
+	long		tmp;
 	int			sign;
 
 	if (is_null_or_empty(str))
@@ -51,14 +52,15 @@ int	ft_atoi(const char *str)
 	i = skipp_ws_sign(str, &sign);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (rs < 0)
+		tmp = rs;
+		rs = rs * 10 + (str[i] - '0');
+		if (rs / 10 != tmp)
 		{
 			if (sign == -1)
 				return (0);
 			else if (sign == 1)
 				return (-1);
 		}
-		rs = rs * 10 + (str[i] - '0');
 		i++;
 	}
 	return ((int)(rs * sign));

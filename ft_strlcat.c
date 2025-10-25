@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 09:22:07 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/23 19:40:41 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/25 22:39:14 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	lendest;
 	size_t	originallendest;
 
-	if (!dst || !src)
+	if (!src)
 		return (0);
+	if (!dst && size == 0)
+		return (ft_strlen(src));
 	i = 0;
 	lendest = ft_strlen(dst);
 	originallendest = lendest;
