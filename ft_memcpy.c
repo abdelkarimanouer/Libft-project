@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:18:26 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/26 14:16:55 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/26 15:01:21 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*pdest;
 	unsigned char	*psrc;
 
-	if (!dest || !src)
-		return (dest);
+	if (!dest && !src)
+		return (NULL);
 	i = 0;
 	pdest = (unsigned char *) dest;
 	psrc = (unsigned char *) src;
