@@ -6,7 +6,7 @@
 /*   By: aanouer <aanouer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:14:45 by aanouer           #+#    #+#             */
-/*   Updated: 2025/10/25 23:00:18 by aanouer          ###   ########.fr       */
+/*   Updated: 2025/10/26 14:29:46 by aanouer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_atoi(const char *str)
 		{
 			if (sign == -1)
 				return (0);
-			else if (sign == 1)
+			if (sign == 1)
 				return (-1);
 		}
 		i++;
