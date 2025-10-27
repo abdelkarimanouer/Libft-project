@@ -25,7 +25,7 @@ fclean : clean
 
 re : fclean all
 
-bonus : $(OBJBONUS)
+bonus : $(NAME) $(OBJBONUS)
 	ar rcs $(NAME) $(OBJBONUS)
 
 %_bonus.o : %_bonus.c libft.h
